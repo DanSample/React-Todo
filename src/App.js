@@ -34,10 +34,10 @@ class App extends React.Component {
   changeTask = e => this.setState({ [e.target.name]: e.target.value });
 
   toggleCompleted = id => {
-    let tasks = this.state.todo.slice();
+    let tasks = this.state.todos.slice();
     tasks = tasks.map(todo => {
       if (todo.id === id) {
-        todo.completed - !todo.completed;
+        todo.completed = !todo.completed;
         return todo;
       } else {
         return todo;
@@ -48,7 +48,7 @@ class App extends React.Component {
 
   clearCompleted = e => {
     e.preventDefault();
-    let tasks = this.state.todos.filter(todo => todo.completed === false);
+    let tasks = this.state.todos.filter(todo => todo.completed === true);
 
     this.setState({ tasks });
   };
@@ -56,7 +56,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <TaskList /> */}
+        <TaskList
+          handleToggleCompleted={this.toggleCompleted}
+          todos={this.state.todos}
+        />
         <TaskForm
           value={this.state.todo}
           handleAddTask={this.addTask}
