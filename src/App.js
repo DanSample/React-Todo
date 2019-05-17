@@ -1,6 +1,6 @@
 import React from 'react';
-import TaskList from './components/TodoComponents/TodoList'
-import TodoForm from './components/TodoComponents/TodoForm';
+import TaskList from './components/TodoComponents/TodoList';
+import TaskForm from './components/TodoComponents/TodoForm';
 
 class App extends React.Component {
   constructor() {
@@ -18,50 +18,46 @@ class App extends React.Component {
           completed: false
         }
       ],
-      todo: ''
+      todo: '' //clears the input field on re-render.
     };
   }
 
   addTask = e => {
     e.preventDefault(); //This will prevent the re-rendering of the entire page and will only re-render the component.
-    const newTask = {task: this.state.todo, completed: false, id: Date.now()};
+    const newTask = { task: this.state.todo, completed: false, id: Date.now() };
     this.setState({
       todos: [...this.state.todos, newTask],
       todo: ''
-    })
+    });
+  };
 
-    changeTask = e => setState ({[e.target.name]: e.target.value});
+  changeTask = e => this.setState({ [e.target.name]: e.target.value });
 
-    toggleCompleted = id => {
-      let tasks = this.state.todo.slice();
-      tasks = tasks.map(todo => {
-        if (todo.id === id){
-          todo.completed - !todo.completed;
-          return todo;
-        } else {
-          return todo;
-        }
-      });
-      this.setState({tasks});
-    };
+  toggleCompleted = id => {
+    let tasks = this.state.todo.slice();
+    tasks = tasks.map(todo => {
+      if (todo.id === id) {
+        todo.completed - !todo.completed;
+        return todo;
+      } else {
+        return todo;
+      }
+    });
+    this.setState({ tasks });
+  };
 
-    clearCompleted  = e => {
-      e.preventDefault();
-      let tasks = this.state.todos.filter(todo => todo.completed === false);
-      
-      this.setState({tasks});
-    };
-  
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
+  clearCompleted = e => {
+    e.preventDefault();
+    let tasks = this.state.todos.filter(todo => todo.completed === false);
+
+    this.setState({ tasks });
+  };
 
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TaskList />
-        <TodoForm 
+        {/* <TaskList /> */}
+        <TaskForm
           value={this.state.todo}
           handleAddTask={this.addTask}
           handleClearCompleted={this.clearCompleted}

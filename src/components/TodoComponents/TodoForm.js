@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskList = props => {
+const TaskForm = props => {
   return (
     <form>
       <input
@@ -16,4 +16,4 @@ const TaskList = props => {
   );
 };
 
-export default TaskList;
+export default TaskForm;
