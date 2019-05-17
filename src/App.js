@@ -47,9 +47,9 @@ class App extends React.Component {
 
     clearCompleted  = e => {
       e.preventDefault();
-        let tasks = this.state.todos.filter(todo => !todo.completed);
+      let tasks = this.state.todos.filter(todo => todo.completed === false);
       
-        this.setState({tasks});
+      this.setState({tasks});
     };
   
   // you will need a place to store your state in this component.
