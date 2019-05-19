@@ -65,13 +65,15 @@ class App extends React.Component {
             handleClearCompleted={this.clearCompleted}
           />
         </div>
-        <TaskList
-          handleToggleCompleted={this.toggleCompleted}
-          todos={this.state.todos}
-        />
+        <div className='taskContainer'>
+          <TaskList
+            handleToggleCompleted={this.toggleCompleted}
+            todos={this.state.todos}
+          />
+        </div>
       </div>
     );
-  }
+  };
 }
 
 export default App;

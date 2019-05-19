@@ -11,14 +11,17 @@ const TaskForm = props => {
         value={props.value}
         placeholder="...task"
       />
-      <button className="btn" onClick={props.handleAddTask}>
-        Add Task
-      </button>
-      <button className="btn" onClick={props.handleClearCompleted}>
-        Clear Completed
-      </button>
+      <div className='btnContainer'>
+        <button className="btn" onClick={props.handleAddTask}>
+          Add Task
+        </button>
+        <button className="btn" onClick={props.handleClearCompleted}>
+          Clear Completed
+        </button>
+      </div>
     </form>
   );
 };
 
 export default TaskForm;
+
