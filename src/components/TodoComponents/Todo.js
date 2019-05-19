@@ -4,7 +4,7 @@ const Task = props => {
   return (
     <div
       className="taskItem"
-      style={props.todo.completed ? { textDecoration: 'line-through' } : null}
+      style={props.todo.completed ? { backgroundColor: 'pink' } : null}
       onClick={() => props.handleToggleCompleted(props.todo.id)}
     >
       {props.todo.task}

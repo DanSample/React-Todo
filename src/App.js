@@ -57,7 +57,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="formContainer">
-          <h1>Task List!</h1>
+          <h1>Task List</h1>
           <TaskForm
             value={this.state.todo}
             handleChangeTask={this.changeTask}
@@ -65,7 +65,7 @@ class App extends React.Component {
             handleClearCompleted={this.clearCompleted}
           />
         </div>
-        <div className='taskContainer'>
+        <div className="taskContainer">
           <TaskList
             handleToggleCompleted={this.toggleCompleted}
             todos={this.state.todos}
@@ -73,7 +73,7 @@ class App extends React.Component {
         </div>
       </div>
     );
-  };
+  }
 }
 
 export default App;

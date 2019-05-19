@@ -14,10 +14,15 @@
   width: 100%;
 }
 
+.container .formContainer h1 {
+  color: #fff;
+}
+
 .container .formContainer .formField .inputField {
   padding: 1rem;
   font-size: 1.6rem;
   border: 2px solid #fff;
+  border-radius: 5px;
   width: 85%;
 }
 
@@ -27,7 +32,7 @@
   max-width: 45rem;
   width: 100%;
   border: 2px solid #cdcdcd;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 1rem 0;
 }
 
@@ -37,8 +42,8 @@
 }
 
 .taskContainer .taskList .taskItem {
-  color: #737373;
-  background-color: rgba(233, 233, 233, 0.5);
+  color: #fff;
+  background-color: rgba(205, 205, 205, 0.9);
   padding: 15px;
   margin-bottom: 1.5rem;
   border-radius: 5px;
