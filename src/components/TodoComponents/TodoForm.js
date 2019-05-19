@@ -11,7 +11,7 @@ const TaskForm = props => {
         value={props.value}
         placeholder="...task"
       />
-      <div className='btnContainer'>
+      <div className="btnContainer">
         <button className="btn" onClick={props.handleAddTask}>
           Add Task
         </button>
@@ -24,4 +24,3 @@ const TaskForm = props => {
 };
 
 export default TaskForm;
-

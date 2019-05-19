@@ -25,11 +25,17 @@ class App extends React.Component {
 
   addTask = e => {
     e.preventDefault(); //This will prevent the re-rendering of the entire page and will only re-render the component.
-    const newTask = { task: this.state.todo, completed: false, id: Date.now() };
-    this.setState({
-      todos: [...this.state.todos, newTask],
-      todo: ''
-    });
+    if (this.state.todo !== '') {
+      const newTask = {
+        task: this.state.todo,
+        completed: false,
+        id: Date.now()
+      };
+      this.setState({
+        todos: [...this.state.todos, newTask],
+        todo: ''
+      });
+    }
   };
 
   changeTask = e => this.setState({ [e.target.name]: e.target.value });
