@@ -4,7 +4,7 @@ import Task from './Todo';
 
 const TaskList = props => {
   return (
-    <div>
+    <div className="taskList">
       {props.todos.map(todo => (
         <Task
           handleToggleCompleted={props.handleToggleCompleted}

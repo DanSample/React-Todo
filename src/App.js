@@ -1,4 +1,5 @@
 import React from 'react';
+import './components/TodoComponents/Todo.css';
 import TaskList from './components/TodoComponents/TodoList';
 import TaskForm from './components/TodoComponents/TodoForm';
 
@@ -54,16 +55,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <div className="formContainer">
+          <h1>Task List!</h1>
+          <TaskForm
+            value={this.state.todo}
+            handleChangeTask={this.changeTask}
+            handleAddTask={this.addTask}
+            handleClearCompleted={this.clearCompleted}
+          />
+        </div>
         <TaskList
           handleToggleCompleted={this.toggleCompleted}
           todos={this.state.todos}
-        />
-        <TaskForm
-          value={this.state.todo}
-          handleChangeTask={this.changeTask}
-          handleAddTask={this.addTask}
-          handleClearCompleted={this.clearCompleted}
         />
       </div>
     );
